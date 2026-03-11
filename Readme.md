@@ -1,23 +1,31 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/pj8M188g)
-# Classification Task
-
-## Task
-
-Solve the classification task using the provided notebook:
-
-```
-keras-classification-task.ipynb
-```
-
-After completing the task, deploy your trained model using FastAPI.
+# Breast Cancer Classification
 
 ## Project Structure
-
-Your project should follow this structure:
-
 ```
 keras-classification-task.ipynb
 deploy.py
 model_weights.pkl
 scaler_weights.pkl
 ```
+
+## How to Run
+
+### 1. Train the Model
+Run all cells in `keras-classification-task.ipynb`
+
+### 2. Start the API
+```bash
+uvicorn deploy:app --reload
+```
+
+### 3. Test
+Open in browser: `http://localhost:8000/docs`
+
+## Model
+- Dataset: Breast Cancer Wisconsin
+- Algorithm: Keras Neural Network
+- Accuracy: 97%
+
+## API Endpoints
+- `GET /health` - Health check
+- `POST /predict` - Predict single sample (30 features)
